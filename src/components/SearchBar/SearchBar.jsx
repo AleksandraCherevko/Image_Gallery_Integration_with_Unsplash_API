@@ -1,17 +1,36 @@
-const SearchBar = () => {
+export default function SearchForm({ onSearch }) {
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const form = evt.target;
+    const topic = form.elements.topic.value;
+    onSearch(topic);
+    form.reset();
+  };
+
   return (
     <header>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
-          autocomplete="off"
-          autofocus
+          name="topic"
           placeholder="Search images and photos"
+          autoComplete="off"
+          autoFocus
         />
-        <button type="submit">Search</button>
+        <button>Search</button>
       </form>
     </header>
   );
-};
+}
 
-export default SearchBar;
+// <header>
+//   <form>
+//     <input
+//       type="text"
+//       autocomplete="off"
+//       autofocus
+//       placeholder="Search images and photos"
+//     />
+//     <button type="submit">Search</button>
+//   </form>
+// </header>
