@@ -1,3 +1,9 @@
+import css from "./ErrorMessage.module.css";
+
 export default function ErrorMessage() {
-  return <p>Ooooops! Something went wrong. Please, restart this page!</p>;
+  return (
+    <p className={css.errorMessage}>
+      Ooooops! Something went wrong. Please, restart this page!
+    </p>
+  );
 }
