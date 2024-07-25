@@ -12,7 +12,7 @@ export default function SearchBar({ onSearch }) {
         } else {
           onSearch(values.name);
           actions.resetForm();
-          toast("🔥 you are pretti. Success request");
+          toast("🔥 Success request");
         }
       }}
     >
