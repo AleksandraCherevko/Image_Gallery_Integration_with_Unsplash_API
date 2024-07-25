@@ -8,11 +8,11 @@ export default function SearchBar({ onSearch }) {
       initialValues={{ name: "" }}
       onSubmit={(values, actions) => {
         if (values.name.trim() === "") {
-          toast.error("Please, enter corrent name for loading");
+          toast("🫠 Ooooops! Please, enter corrent name for loading...");
         } else {
           onSearch(values.name);
           actions.resetForm();
-          toast("🔥 good");
+          toast("🔥 you are pretti. Success request");
         }
       }}
     >
