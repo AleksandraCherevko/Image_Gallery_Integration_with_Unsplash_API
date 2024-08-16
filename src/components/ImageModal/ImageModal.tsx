@@ -1,7 +1,16 @@
 import Modal from "react-modal";
 import css from "./ImageModal.module.css";
+import { Image } from "../unsplash-api";
 
-export default function ImageModal({ isOpen, onRequestClose, data }) {
+Modal.setAppElement("#root");
+
+type Props = {
+  isOpen: boolean;
+  onRequestClose: () => void;
+  data: Image | null;
+};
+
+export default function ImageModal({ isOpen, onRequestClose, data }: Props) {
   if (!data) {
     return null;
   }

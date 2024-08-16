@@ -1,7 +1,7 @@
 import { Watch } from "react-loader-spinner";
 import css from "./Loader.module.css";
 
-export default function Loader() {
+const Loader: React.FC = () => {
   return (
     <div>
       <p className={css.loader}>
@@ -18,4 +18,6 @@ export default function Loader() {
       </p>
     </div>
   );
-}
+};
+
+export default Loader;

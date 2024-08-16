@@ -1,9 +1,16 @@
 import css from "./LoadMoreBtn.module.css";
 
-export default function LoadMoreBtn({ onClick }) {
+type Props = {
+  onClick: () => void;
+  hasMore: boolean;
+};
+
+export default function LoadMoreBtn({ onClick, hasMore }: Props) {
   return (
-    <button className={css.loadMoreBtn} onClick={onClick} type="button">
-      Load more
-    </button>
+    hasMore && (
+      <button className={css.loadMoreBtn} onClick={onClick} type="button">
+        Load more
+      </button>
+    )
   );
 }

@@ -1,16 +1,18 @@
 import ImageCard from "../ImageCard/ImageCard";
 import css from "./ImageGallery.module.css";
+import { Image } from "../unsplash-api";
 
-export default function ImageGallery({ items, onImageClick }) {
+type Props = {
+  items: Image[];
+  onImageClick: (image: Image) => void;
+};
+
+export default function ImageGallery({ items, onImageClick }: Props) {
   return (
     <ul className={css.imgGalList}>
-      {items.map((item) => (
-        <li
-          className={css.imgGalItem}
-          key={item.id}
-          onClick={() => onImageClick(item)}
-        >
-          <ImageCard name={item} />
+      {items.map((image: Image) => (
+        <li className={css.imgGalItem} key={image.id}>
+          <ImageCard image={image} openModal={onImageClick} />
         </li>
       ))}
     </ul>

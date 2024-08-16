@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-   "build": "tsc && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -16,7 +16,8 @@
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-loader-spinner": "^6.1.6",
-    "react-modal": "^3.16.1"
+    "react-modal": "^3.16.1",
+    "unsplash-api": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

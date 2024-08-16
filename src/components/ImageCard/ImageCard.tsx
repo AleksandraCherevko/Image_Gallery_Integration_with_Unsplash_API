@@ -1,8 +1,15 @@
 import css from "./ImageCard.module.css";
+import { Image } from "../unsplash-api";
 
-export default function ImageCard({ name: { urls, description } }) {
+type Props = {
+  image: Image;
+  openModal: (image: Image) => void;
+};
+
+export default function ImageCard({ image, openModal }: Props) {
+  const { urls, description } = image;
   return (
-    <div>
+    <div onClick={() => openModal(image)}>
       <img className={css.imgCard} src={urls.small} alt={description} />
     </div>
   );
