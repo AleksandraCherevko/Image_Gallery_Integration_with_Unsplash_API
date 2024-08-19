@@ -2,17 +2,13 @@ import { Field, Form, Formik } from "formik";
 import css from "./SearchBar.module.css";
 import toast from "react-hot-toast";
 
-type Props = {
-  onSearch: (newImg: string) => void;
-};
-
-export default function SearchBar({ onSearch }: Props) {
+export default function SearchBar({ onSearch }) {
   return (
     <Formik
       initialValues={{ name: "" }}
       onSubmit={(values, actions) => {
         if (values.name.trim() === "") {
-          toast.error("🫠 Ooooops! Please, enter correct name for loading...");
+          toast("🫠 Ooooops! Please, enter corrent name for loading...");
         } else {
           onSearch(values.name);
           actions.resetForm();
